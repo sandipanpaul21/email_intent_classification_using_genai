@@ -1,0 +1,90 @@
+==================================================
+4. TEXT REPRESENTATION METHODS
+==================================================
+
+--------------------------------------------------
+4.1 ONE-HOT ENCODING
+--------------------------------------------------
+- Each unique word in the vocabulary is represented as a binary vector.
+  1 = word is present, 0 = word is absent.
+- Example (Vocabulary = ["FD", "loan", "rate"]):
+      Word  | FD | loan | rate
+      FD    | 1  | 0    | 0
+      loan  | 0  | 1    | 0
+      rate  | 0  | 0    | 1
+- Example of weakness: "Sandipan reports to Anand" and "Anand reports to
+  Sandipan" look very similar in One-Hot Encoding because it ignores word
+  order and context - even though the business meaning is completely
+  different.
+- Limitations:
+    x Does not capture meaning/similarity between words
+      (e.g., "FD" and "deposit" are treated as unrelated).
+    x Produces very large and sparse vectors for big vocabularies.
+    x Ignores word order and context completely.
+
+--------------------------------------------------
+4.2 BAG OF WORDS (BoW)
+--------------------------------------------------
+- Represents text by counting how many times each word appears in a
+  document.
+- Example: "FD rate FD interest" -> {"FD": 2, "rate": 1, "interest": 1}
+  Each document becomes a frequency vector based on the vocabulary.
+      Vocabulary: FD, rate, interest, ...
+      Doc vector: 2,  1,    1, ...
+- Limitations:
+    x Loses word order and context - e.g. "Sandipan reports to Anand" and
+      "Anand reports to Sandipan" look identical.
+    x Treats all words as equally important; ordering/importance is lost.
+
+--------------------------------------------------
+4.3 TF-IDF (Term Frequency - Inverse Document Frequency)
+--------------------------------------------------
+- Assigns higher weight to unique/important words and lowers weight for
+  common words.
+- Formula: TF-IDF = TF x IDF
+    TF (Term Frequency)        = Word count in a document / Total words in
+                                  that document
+    IDF (Inverse Doc Frequency)= log( Total documents / Documents
+                                  containing the word )
+- FD Example (1000 FD-related customer emails):
+      Term                  | Docs Containing | IDF = log(1000/Docs) | Meaning
+      "FD"                  | 950              | ~0.02 (low)          | Low importance (common term)
+      "premature withdrawal"| 20               | ~1.7 (high)          | High importance (rare but meaningful)
+- Inference: Common words like "FD" or "account" get LESS importance, while
+  rare but meaningful terms like "premature withdrawal" or "tax benefit"
+  get MORE importance.
+
+--------------------------------------------------
+4.4 DENSE VECTOR
+--------------------------------------------------
+- A compact numerical representation of a word where most values are
+  non-zero, and each number carries meaningful information about that word.
+- In simple terms: a small-sized list of numbers that captures semantic
+  meaning (how similar/related words are).
+- Example - Sparse vs Dense (vocabulary of 10,000 unique words):
+
+  ONE-HOT ENCODING (Sparse Vector):
+    "FD" -> [1, 0, 0, 0, 0, 0, 0, 0, 0, ..., 0]   (length = 10,000)
+    - Only one position is 1, rest are 0 -> almost all zeros -> sparse.
+    - No meaning/relation between words ("FD" and "deposit" are orthogonal,
+      i.e. distance is large).
+
+  WORD2VEC (Dense Vector):
+    "FD" -> [0.54, -0.28, 0.67, -0.31, 0.05, ...]  (length = 100 or 300)
+    - All values are non-zero and learned by the model.
+    - Words with similar meaning (e.g., "FD", "deposit", "investment") have
+      similar numeric patterns.
+    - This compact form (100-300 dimensions, with numbers carrying actual
+      meaning) is called a dense vector.
+
+==================================================
+5. KEY TAKEAWAY
+==================================================
+- Tokenization converts TEXT -> TOKENS.
+- Text Representation converts TOKENS -> NUMBERS/VECTORS.
+- Better representations capture meaning, similarity, and importance of
+  words for smarter ML/NLP models.
+
+--------------------------------------------------
+NEXT UP: NLP Cheatsheet Part 2 - Embeddings, Models & Advanced Concepts
+--------------------------------------------------
