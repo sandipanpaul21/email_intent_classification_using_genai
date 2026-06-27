@@ -1,0 +1,21 @@
+# FD_provider — FD-signal keyword groups ONLY.
+# 4 groups, all positive FD-domain signals. Derived from real term-frequency
+# counts in fd_dataset_messy.csv (counted directly against FD-labeled rows).
+# Format: [GROUP_NAME] header line, followed by one line of comma-separated
+# keywords.
+#
+# Used as the FIRST filter: if any of these match, the email is a
+# CANDIDATE FD email. See fd_negation_phrases.txt for the second filter
+# that can veto or combine with this one.
+
+[FD_MATURITY_PAYOUT]
+maturity, machurity, interest, byaj, quarterly, payout
+
+[FD_PREMATURE_ROLLOVER]
+premature, withdrawal, nikalna, rollover, renew, naya fd
+
+[FD_ACCOUNT_REFERENCE]
+fd a/c, fd reference, scheme, jama kiya
+
+[FD_NOMINEE_TENURE_RATE]
+nominee, interest rate, tenure, months ke liye

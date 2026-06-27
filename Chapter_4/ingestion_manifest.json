@@ -1,0 +1,10 @@
+{
+  "../data/fd_keyword_groups.txt": {
+    "hash": "5e0c42c7dd727f493084d0e49a1b137a0b246b1451a827a366bc39bb34a3dd77",
+    "last_ingested": "2026-06-27T07:21:59.487290+00:00"
+  },
+  "../data/fd_negation_phrases.txt": {
+    "hash": "09b98e6fb7b89dd692bd90846da73d5739356b0458f851ac3b079820bdc95735",
+    "last_ingested": "2026-06-27T07:21:59.489410+00:00"
+  }
+}

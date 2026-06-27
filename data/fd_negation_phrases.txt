@@ -1,0 +1,31 @@
+# Negation list — Non-FD VETO terms.
+# If any of these appear in an email, do NOT trust an FD keyword match on
+# its own: it means a Non-FD topic is also present. Combined with
+# fd_keyword_groups.txt, this is the actual 3-way decision rule:
+#
+#   FD terms present, negation terms absent  -> FD
+#   FD terms absent,  negation terms present -> Non-FD
+#   BOTH present                             -> Multiple Category
+#   NEITHER present                          -> ambiguous / needs escalation
+#
+# Derived from real term-frequency counts in fd_dataset_messy.csv (counted
+# directly against Non-FD-labeled rows) -- the same terms that used to be
+# mislabeled as "NONFD_*" groups in fd_keyword_groups.txt. They belong here,
+# not there, since their job is to veto/qualify an FD match, not describe one.
+
+loan
+emi
+personal loan
+home loan
+cheque
+bounce
+insurance
+policy
+card
+credit card
+login
+otp
+app
+kyc
+branch
+statement
