@@ -30,7 +30,7 @@ the conversion/OCR team, not this pipeline.
 import os
 import glob
 import json
-from document import make_document
+from email_intent_classification_using_genai.Chapter_5.document import make_document
 
 JSON_FOLDER = "../data/related_documents_json/"
 

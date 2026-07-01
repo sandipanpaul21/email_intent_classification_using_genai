@@ -75,7 +75,7 @@ def find_duplicates(documents: list, near_duplicate_threshold: float = 0.97) -> 
 
 
 if __name__ == "__main__":
-    from document import make_document
+    from email_intent_classification_using_genai.Chapter_5.document import make_document
 
     test_docs = [
         make_document("FD rate is 7.1 percent for 24 month tenure.", {"source": "FD_Policy.json"}),

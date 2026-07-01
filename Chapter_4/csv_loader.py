@@ -12,7 +12,7 @@ one customer's record", not "the entire 20,000-row table".
 """
 
 import csv
-from document import make_document
+from email_intent_classification_using_genai.Chapter_5.document import make_document
 
 
 def lazy_load_csv(file_path: str):
