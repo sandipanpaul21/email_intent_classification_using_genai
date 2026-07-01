@@ -1,0 +1,18 @@
+{
+  "../data/related_documents_json\\01_FD_FAQ.json": {
+    "hash": "62ab8e344c0bb68d7508414c9bfb2581c63f0f24ef76478a49d06b094e3fe884",
+    "last_ingested": "2026-06-30T15:01:38.928970+00:00"
+  },
+  "../data/related_documents_json\\02_FD_Product_Guide.json": {
+    "hash": "c05aff0530e1176e71d9214d2d12b742ee25c40ef3b36b31ae0b540faa84fd5b",
+    "last_ingested": "2026-06-30T15:01:38.929650+00:00"
+  },
+  "../data/related_documents_json\\03_FD_SOPs.json": {
+    "hash": "5ada654b849bc9ca8b84759302bc11a71350dcb9bb5c13eb7c93800d87ac6dff",
+    "last_ingested": "2026-06-30T15:01:38.929650+00:00"
+  },
+  "../data/related_documents_json\\04_FD_Policy_Reference.json": {
+    "hash": "7dd1ba7e3ceb0f306461107a78b8604985ee13ba5f1b068a8736d961484bd6b1",
+    "last_ingested": "2026-06-30T15:01:38.930228+00:00"
+  }
+}
