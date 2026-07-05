@@ -4,3 +4,13 @@ Chapter_00/sp_model.model
 Chapter_00/sp_model.vocab
 __pycache__
 Chapter_01/EDA_Image/
+
+# model checkpoints and binary weights
+*.pt
+*.safetensors
+*.bin
+*.ckpt
+*.h5
+*.pth
+*.model
+*.vocab
